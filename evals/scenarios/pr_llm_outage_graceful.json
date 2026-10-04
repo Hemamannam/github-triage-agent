@@ -1,0 +1,33 @@
+{
+  "name": "PR triage survives LLM outage",
+  "object_type": "pull_request",
+  "github": {
+    "pr": {
+      "body": "Anything.",
+      "changed_files": [
+        {
+          "filename": "backend/x.py",
+          "status": "modified",
+          "additions": 40,
+          "deletions": 2
+        }
+      ]
+    }
+  },
+  "llm": {
+    "errors": {
+      "PRAssessment": "model unavailable"
+    }
+  },
+  "expected": {
+    "forbidden_executed": [
+      "add_labels",
+      "post_comment",
+      "request_review"
+    ],
+    "requires_human_confirmation": true,
+    "escalation_contains": "classification failed"
+  },
+  "description": "PR triage survives LLM outage",
+  "live": false
+}

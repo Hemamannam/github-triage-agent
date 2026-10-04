@@ -1,0 +1,38 @@
+{
+  "name": "critical production bug",
+  "github": {
+    "issue": {
+      "title": "Data loss on concurrent writes",
+      "body": "Rows disappear under load. Repro attached."
+    }
+  },
+  "llm": {
+    "issue_assessment": {
+      "classification": "bug",
+      "confidence": 0.95,
+      "severity": "critical",
+      "priority": "critical",
+      "suggested_labels": [
+        "bug"
+      ],
+      "search_keywords": [
+        "concurrent",
+        "writes"
+      ],
+      "reasoning_summary": "Data loss, complete repro."
+    }
+  },
+  "expected": {
+    "classification": "bug",
+    "priority": "critical",
+    "required_labels": [
+      "bug",
+      "P0"
+    ],
+    "expected_executed": [
+      "add_labels"
+    ],
+    "requires_human_confirmation": false
+  },
+  "description": "critical production bug"
+}

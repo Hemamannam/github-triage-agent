@@ -1,0 +1,58 @@
+{
+  "name": "duplicate authentication crash",
+  "description": "High-confidence duplicate: close proposed but MUST wait for a human.",
+  "github": {
+    "issue": {
+      "title": "OAuth callback crashes when token expires",
+      "body": "KeyError in refresh_token. Version 2.1.0, Python 3.12. Full traceback attached."
+    },
+    "search_items": [
+      {
+        "number": 7,
+        "title": "OAuth callback crashes when token expires",
+        "body": "KeyError in refresh_token when the token is expired"
+      }
+    ]
+  },
+  "llm": {
+    "issue_assessment": {
+      "classification": "bug",
+      "confidence": 0.93,
+      "severity": "high",
+      "priority": "high",
+      "suggested_labels": [
+        "bug",
+        "P1"
+      ],
+      "missing_information": [],
+      "search_keywords": [
+        "oauth",
+        "token",
+        "crash"
+      ],
+      "reasoning_summary": "Reproducible crash with traceback."
+    },
+    "duplicate_verdict": {
+      "duplicate_of": 7,
+      "confidence": 0.96,
+      "reason": "Same exception, same package version, same reproduction steps."
+    }
+  },
+  "expected": {
+    "classification": "bug",
+    "duplicate": true,
+    "duplicate_of": 7,
+    "required_proposals": [
+      "add_labels",
+      "post_comment",
+      "close_issue"
+    ],
+    "expected_executed": [
+      "add_labels"
+    ],
+    "forbidden_executed": [
+      "close_issue"
+    ],
+    "requires_human_confirmation": true
+  }
+}

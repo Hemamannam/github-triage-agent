@@ -1,0 +1,51 @@
+{
+  "name": "unusually large PR flagged",
+  "object_type": "pull_request",
+  "github": {
+    "pr": {
+      "body": "Big refactor.",
+      "additions": 1500,
+      "deletions": 400,
+      "changed_files": [
+        {
+          "filename": "backend/core.py",
+          "status": "modified",
+          "additions": 750,
+          "deletions": 2
+        },
+        {
+          "filename": "tests/test_core.py",
+          "status": "modified",
+          "additions": 750,
+          "deletions": 2
+        }
+      ],
+      "check_runs": [
+        {
+          "name": "ci",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    }
+  },
+  "llm": {
+    "pr_assessment": {
+      "classification": "feature_request",
+      "confidence": 0.92,
+      "suggested_labels": [
+        "enhancement"
+      ],
+      "summary": "Adds a rate limiter to the API layer.",
+      "reasoning_summary": "Feature PR.",
+      "unusually_large": false
+    }
+  },
+  "expected": {
+    "required_proposals": [
+      "post_comment"
+    ],
+    "requires_human_confirmation": true
+  },
+  "description": "unusually large PR flagged"
+}

@@ -1,0 +1,36 @@
+{
+  "name": "support question",
+  "github": {
+    "issue": {
+      "title": "How do I configure retries?",
+      "body": "Which env var controls retries?"
+    }
+  },
+  "llm": {
+    "issue_assessment": {
+      "classification": "question",
+      "confidence": 0.88,
+      "severity": "none",
+      "priority": "low",
+      "suggested_labels": [
+        "question"
+      ],
+      "search_keywords": [
+        "configure",
+        "retries"
+      ],
+      "reasoning_summary": "Usage question, not a defect."
+    }
+  },
+  "expected": {
+    "classification": "question",
+    "required_labels": [
+      "question"
+    ],
+    "expected_executed": [
+      "add_labels"
+    ],
+    "requires_human_confirmation": false
+  },
+  "description": "support question"
+}

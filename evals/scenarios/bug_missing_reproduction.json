@@ -1,0 +1,49 @@
+{
+  "name": "bug missing reproduction info",
+  "description": "Incomplete bug: comment drafted but held (comments not automatic by default).",
+  "github": {
+    "issue": {
+      "title": "App crashes sometimes",
+      "body": "it just crashes"
+    }
+  },
+  "llm": {
+    "issue_assessment": {
+      "classification": "bug",
+      "confidence": 0.85,
+      "severity": "high",
+      "priority": "high",
+      "suggested_labels": [
+        "bug",
+        "P1"
+      ],
+      "missing_information": [
+        "package version",
+        "complete traceback",
+        "minimal reproduction steps"
+      ],
+      "search_keywords": [
+        "crash"
+      ],
+      "reasoning_summary": "Reproducible crash with traceback."
+    },
+    "comment_draft": {
+      "body": "Thanks! Could you add the package version, the complete traceback and minimal reproduction steps?"
+    }
+  },
+  "expected": {
+    "classification": "bug",
+    "required_proposals": [
+      "add_labels",
+      "post_comment"
+    ],
+    "forbidden_executed": [
+      "post_comment",
+      "close_issue"
+    ],
+    "expected_executed": [
+      "add_labels"
+    ],
+    "requires_human_confirmation": true
+  }
+}

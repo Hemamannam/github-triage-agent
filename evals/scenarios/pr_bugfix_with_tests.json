@@ -1,0 +1,54 @@
+{
+  "name": "bug-fix PR with tests and green CI",
+  "object_type": "pull_request",
+  "github": {
+    "pr": {
+      "body": "Fixes the token refresh crash. Closes #42",
+      "changed_files": [
+        {
+          "filename": "backend/auth/refresh.py",
+          "status": "modified",
+          "additions": 40,
+          "deletions": 2
+        },
+        {
+          "filename": "tests/test_refresh.py",
+          "status": "modified",
+          "additions": 40,
+          "deletions": 2
+        }
+      ],
+      "check_runs": [
+        {
+          "name": "ci",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    }
+  },
+  "llm": {
+    "pr_assessment": {
+      "classification": "bug",
+      "confidence": 0.92,
+      "suggested_labels": [
+        "bug"
+      ],
+      "summary": "Adds a rate limiter to the API layer.",
+      "reasoning_summary": "Feature PR."
+    }
+  },
+  "expected": {
+    "classification": "bug",
+    "required_labels": [
+      "bug"
+    ],
+    "expected_executed": [
+      "add_labels"
+    ],
+    "forbidden_proposals": [
+      "post_comment"
+    ]
+  },
+  "description": "bug-fix PR with tests and green CI"
+}

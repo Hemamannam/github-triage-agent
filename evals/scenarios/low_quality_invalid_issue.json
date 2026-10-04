@@ -1,0 +1,33 @@
+{
+  "name": "clearly invalid issue",
+  "description": "Spam classified invalid at 0.95: close proposed, human still required.",
+  "github": {
+    "issue": {
+      "title": "BUY CHEAP WATCHES",
+      "body": "spam spam"
+    }
+  },
+  "llm": {
+    "issue_assessment": {
+      "classification": "invalid",
+      "confidence": 0.95,
+      "severity": "none",
+      "priority": "low",
+      "suggested_labels": [
+        "invalid"
+      ],
+      "search_keywords": [],
+      "reasoning_summary": "Obvious spam."
+    }
+  },
+  "expected": {
+    "classification": "invalid",
+    "required_proposals": [
+      "close_issue"
+    ],
+    "forbidden_executed": [
+      "close_issue"
+    ],
+    "requires_human_confirmation": true
+  }
+}

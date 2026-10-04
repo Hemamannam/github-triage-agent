@@ -1,0 +1,33 @@
+{
+  "name": "ambiguous issue stays recommendations-only",
+  "github": {
+    "issue": {
+      "title": "It doesn't work",
+      "body": "help"
+    }
+  },
+  "llm": {
+    "issue_assessment": {
+      "classification": "question",
+      "confidence": 0.55,
+      "severity": "none",
+      "priority": "low",
+      "suggested_labels": [
+        "question"
+      ],
+      "search_keywords": [],
+      "reasoning_summary": "Far too vague to classify confidently."
+    }
+  },
+  "expected": {
+    "classification": "question",
+    "forbidden_executed": [
+      "add_labels",
+      "post_comment",
+      "close_issue"
+    ],
+    "requires_human_confirmation": true,
+    "escalation_contains": "recommendations only"
+  },
+  "description": "ambiguous issue stays recommendations-only"
+}

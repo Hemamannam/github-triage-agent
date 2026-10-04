@@ -1,0 +1,52 @@
+{
+  "name": "PR with failing CI",
+  "object_type": "pull_request",
+  "github": {
+    "pr": {
+      "body": "New export endpoint.",
+      "changed_files": [
+        {
+          "filename": "backend/export.py",
+          "status": "modified",
+          "additions": 40,
+          "deletions": 2
+        },
+        {
+          "filename": "tests/test_export.py",
+          "status": "modified",
+          "additions": 40,
+          "deletions": 2
+        }
+      ],
+      "check_runs": [
+        {
+          "name": "ci",
+          "status": "completed",
+          "conclusion": "failure"
+        }
+      ]
+    }
+  },
+  "llm": {
+    "pr_assessment": {
+      "classification": "feature_request",
+      "confidence": 0.92,
+      "suggested_labels": [
+        "enhancement"
+      ],
+      "summary": "Adds a rate limiter to the API layer.",
+      "reasoning_summary": "Feature PR.",
+      "ci_failing": false
+    }
+  },
+  "expected": {
+    "required_proposals": [
+      "post_comment"
+    ],
+    "forbidden_executed": [
+      "post_comment"
+    ],
+    "requires_human_confirmation": true
+  },
+  "description": "PR with failing CI"
+}

@@ -1,0 +1,17 @@
+services:
+  triage-agent:
+    build: .
+    image: github-triage-agent
+    env_file: .env
+    environment:
+      TRIAGE_DB_PATH: /data/triage_agent.db
+    volumes:
+      - triage-data:/data
+      # Mount your repository policy config:
+      - ./config.yaml:/app/config.yaml:ro
+    # MCP over stdio needs an attached TTY when run interactively:
+    stdin_open: true
+    tty: true
+
+volumes:
+  triage-data:

@@ -1,0 +1,41 @@
+{
+  "name": "search returns only the issue itself",
+  "description": "Self-hits are excluded; no duplicate pipeline runs.",
+  "github": {
+    "issue": {
+      "title": "OAuth callback crashes when token expires",
+      "body": "KeyError in refresh_token. Version 2.1.0, Python 3.12. Full traceback attached."
+    },
+    "search_items": [
+      {
+        "number": 42,
+        "title": "OAuth callback crashes when token expires"
+      }
+    ]
+  },
+  "llm": {
+    "issue_assessment": {
+      "classification": "bug",
+      "confidence": 0.93,
+      "severity": "high",
+      "priority": "high",
+      "suggested_labels": [
+        "bug",
+        "P1"
+      ],
+      "missing_information": [],
+      "search_keywords": [
+        "oauth",
+        "token",
+        "crash"
+      ],
+      "reasoning_summary": "Reproducible crash with traceback."
+    }
+  },
+  "expected": {
+    "duplicate": false,
+    "forbidden_proposals": [
+      "close_issue"
+    ]
+  }
+}

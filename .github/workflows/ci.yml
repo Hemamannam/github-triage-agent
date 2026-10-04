@@ -1,0 +1,38 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+      - name: Install
+        run: pip install -e ".[dev]"
+      - name: Lint (ruff)
+        run: ruff check src tests
+      - name: Type-check (mypy, strict)
+        run: mypy
+      - name: Tests + scripted evaluation suite
+        run: pytest
+      - name: Evaluation report
+        run: python -m triage_agent.evals.runner
+
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build image
+        run: docker build -t github-triage-agent .
+      - name: Smoke-test CLI in container
+        run: docker run --rm -e GITHUB_TOKEN=placeholder github-triage-agent --help

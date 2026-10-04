@@ -1,0 +1,50 @@
+{
+  "name": "unverifiable CODEOWNERS user is never assigned",
+  "github": {
+    "issue": {
+      "title": "OAuth callback crashes when token expires",
+      "body": "KeyError in refresh_token. Version 2.1.0, Python 3.12. Full traceback attached."
+    },
+    "context_overrides": {
+      "codeowners": "/backend/ @ghost-user"
+    },
+    "assignable_users": [
+      "alice"
+    ]
+  },
+  "llm": {
+    "issue_assessment": {
+      "classification": "bug",
+      "confidence": 0.95,
+      "severity": "high",
+      "priority": "high",
+      "suggested_labels": [
+        "bug",
+        "P1"
+      ],
+      "missing_information": [],
+      "search_keywords": [
+        "backend"
+      ],
+      "reasoning_summary": "Reproducible crash with traceback."
+    }
+  },
+  "config": {
+    "repositories": {
+      "default": {
+        "automatic_labels": true,
+        "automatic_assignment": true
+      }
+    }
+  },
+  "expected": {
+    "required_proposals": [
+      "assign_issue"
+    ],
+    "forbidden_executed": [
+      "assign_issue"
+    ],
+    "requires_human_confirmation": false
+  },
+  "description": "unverifiable CODEOWNERS user is never assigned"
+}

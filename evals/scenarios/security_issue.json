@@ -1,0 +1,42 @@
+{
+  "name": "security-sensitive report",
+  "description": "Security reports force critical priority and hold people-facing actions.",
+  "github": {
+    "issue": {
+      "title": "JWT signature not verified",
+      "body": "Tokens accepted without signature check."
+    }
+  },
+  "llm": {
+    "issue_assessment": {
+      "classification": "security",
+      "confidence": 0.92,
+      "severity": "medium",
+      "priority": "medium",
+      "is_security_sensitive": true,
+      "suggested_labels": [
+        "security"
+      ],
+      "search_keywords": [
+        "jwt",
+        "signature"
+      ],
+      "reasoning_summary": "Auth bypass report."
+    }
+  },
+  "expected": {
+    "classification": "security",
+    "priority": "critical",
+    "required_labels": [
+      "security",
+      "P0"
+    ],
+    "expected_executed": [
+      "add_labels"
+    ],
+    "forbidden_executed": [
+      "close_issue",
+      "post_comment"
+    ]
+  }
+}

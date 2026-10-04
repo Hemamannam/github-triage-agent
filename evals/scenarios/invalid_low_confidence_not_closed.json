@@ -1,0 +1,31 @@
+{
+  "name": "probably-invalid issue below threshold",
+  "description": "0.80 confidence invalid: close must NOT even be proposed.",
+  "github": {
+    "issue": {
+      "title": "something weird",
+      "body": "??"
+    }
+  },
+  "llm": {
+    "issue_assessment": {
+      "classification": "invalid",
+      "confidence": 0.8,
+      "severity": "none",
+      "priority": "low",
+      "suggested_labels": [
+        "invalid"
+      ],
+      "search_keywords": [],
+      "reasoning_summary": "Unclear, possibly invalid."
+    }
+  },
+  "expected": {
+    "forbidden_proposals": [
+      "close_issue"
+    ],
+    "expected_executed": [
+      "add_labels"
+    ]
+  }
+}

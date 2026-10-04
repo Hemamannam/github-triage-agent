@@ -1,0 +1,26 @@
+{
+  "name": "LLM outage degrades to human escalation",
+  "github": {
+    "issue": {
+      "title": "OAuth callback crashes when token expires",
+      "body": "KeyError in refresh_token. Version 2.1.0, Python 3.12. Full traceback attached."
+    }
+  },
+  "llm": {
+    "errors": {
+      "IssueAssessment": "model unavailable (503)"
+    }
+  },
+  "expected": {
+    "forbidden_executed": [
+      "add_labels",
+      "post_comment",
+      "close_issue",
+      "assign_issue"
+    ],
+    "requires_human_confirmation": true,
+    "escalation_contains": "classification failed"
+  },
+  "description": "LLM outage degrades to human escalation",
+  "live": false
+}

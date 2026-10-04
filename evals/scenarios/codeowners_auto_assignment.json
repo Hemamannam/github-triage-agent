@@ -1,0 +1,45 @@
+{
+  "name": "CODEOWNERS-based automatic assignment",
+  "description": "Policy allows auto-assignment; only verified users are assigned.",
+  "github": {
+    "issue": {
+      "title": "OAuth callback crashes when token expires",
+      "body": "KeyError in refresh_token. Version 2.1.0, Python 3.12. Full traceback attached."
+    }
+  },
+  "llm": {
+    "issue_assessment": {
+      "classification": "bug",
+      "confidence": 0.95,
+      "severity": "high",
+      "priority": "high",
+      "suggested_labels": [
+        "bug",
+        "P1"
+      ],
+      "missing_information": [],
+      "search_keywords": [
+        "backend"
+      ],
+      "reasoning_summary": "Reproducible crash with traceback."
+    }
+  },
+  "config": {
+    "repositories": {
+      "default": {
+        "automatic_labels": true,
+        "automatic_assignment": true
+      }
+    }
+  },
+  "expected": {
+    "required_proposals": [
+      "assign_issue"
+    ],
+    "expected_executed": [
+      "add_labels",
+      "assign_issue"
+    ],
+    "requires_human_confirmation": false
+  }
+}

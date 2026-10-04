@@ -1,0 +1,46 @@
+{
+  "name": "PR missing tests",
+  "object_type": "pull_request",
+  "github": {
+    "pr": {
+      "body": "Refactors the auth flow.",
+      "changed_files": [
+        {
+          "filename": "backend/auth/flow.py",
+          "status": "modified",
+          "additions": 120,
+          "deletions": 2
+        }
+      ],
+      "check_runs": [
+        {
+          "name": "ci",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    }
+  },
+  "llm": {
+    "pr_assessment": {
+      "classification": "bug",
+      "confidence": 0.92,
+      "suggested_labels": [
+        "bug"
+      ],
+      "summary": "Adds a rate limiter to the API layer.",
+      "reasoning_summary": "Feature PR.",
+      "missing_tests": false
+    }
+  },
+  "expected": {
+    "required_proposals": [
+      "post_comment"
+    ],
+    "forbidden_executed": [
+      "post_comment"
+    ],
+    "requires_human_confirmation": true
+  },
+  "description": "PR missing tests"
+}

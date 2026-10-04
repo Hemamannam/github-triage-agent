@@ -1,0 +1,60 @@
+{
+  "name": "normal feature PR",
+  "object_type": "pull_request",
+  "github": {
+    "pr": {
+      "body": "Adds rate limiting. Fixes #42",
+      "changed_files": [
+        {
+          "filename": "backend/limiter.py",
+          "status": "modified",
+          "additions": 40,
+          "deletions": 2
+        },
+        {
+          "filename": "tests/test_limiter.py",
+          "status": "modified",
+          "additions": 40,
+          "deletions": 2
+        }
+      ],
+      "check_runs": [
+        {
+          "name": "ci",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    }
+  },
+  "llm": {
+    "pr_assessment": {
+      "classification": "feature_request",
+      "confidence": 0.92,
+      "suggested_labels": [
+        "enhancement"
+      ],
+      "summary": "Adds a rate limiter to the API layer.",
+      "reasoning_summary": "Feature PR."
+    }
+  },
+  "expected": {
+    "classification": "feature_request",
+    "required_proposals": [
+      "add_labels",
+      "request_review"
+    ],
+    "expected_executed": [
+      "add_labels"
+    ],
+    "forbidden_proposals": [
+      "post_comment",
+      "close_issue"
+    ],
+    "forbidden_executed": [
+      "request_review"
+    ],
+    "requires_human_confirmation": true
+  },
+  "description": "Normal feature PR: label applied automatically; the CODEOWNERS review suggestion is held for approval under the default policy."
+}

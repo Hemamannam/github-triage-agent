@@ -1,0 +1,52 @@
+{
+  "name": "PR changing behaviour without docs",
+  "object_type": "pull_request",
+  "github": {
+    "pr": {
+      "body": "Changes default retry count.",
+      "changed_files": [
+        {
+          "filename": "backend/config.py",
+          "status": "modified",
+          "additions": 40,
+          "deletions": 2
+        },
+        {
+          "filename": "tests/test_config.py",
+          "status": "modified",
+          "additions": 40,
+          "deletions": 2
+        }
+      ],
+      "check_runs": [
+        {
+          "name": "ci",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    }
+  },
+  "llm": {
+    "pr_assessment": {
+      "classification": "feature_request",
+      "confidence": 0.92,
+      "suggested_labels": [
+        "enhancement"
+      ],
+      "summary": "Adds a rate limiter to the API layer.",
+      "reasoning_summary": "Feature PR.",
+      "missing_documentation": true
+    }
+  },
+  "expected": {
+    "required_proposals": [
+      "post_comment"
+    ],
+    "forbidden_executed": [
+      "post_comment"
+    ],
+    "requires_human_confirmation": true
+  },
+  "description": "PR changing behaviour without docs"
+}

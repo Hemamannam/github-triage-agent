@@ -1,0 +1,55 @@
+{
+  "name": "idempotency: marker comment already exists",
+  "github": {
+    "issue": {
+      "title": "App crashes sometimes",
+      "body": "no info"
+    },
+    "existing_comments": [
+      {
+        "user": "triage-bot",
+        "body": "Please add info\\n\\n<!-- github-triage-agent:missing-info -->"
+      }
+    ]
+  },
+  "llm": {
+    "issue_assessment": {
+      "classification": "bug",
+      "confidence": 0.93,
+      "severity": "high",
+      "priority": "high",
+      "suggested_labels": [
+        "bug",
+        "P1"
+      ],
+      "missing_information": [
+        "package version"
+      ],
+      "search_keywords": [
+        "crash"
+      ],
+      "reasoning_summary": "Reproducible crash with traceback."
+    },
+    "comment_draft": {
+      "body": "Could you add the package version?"
+    }
+  },
+  "config": {
+    "repositories": {
+      "default": {
+        "automatic_labels": true,
+        "automatic_comments": true
+      }
+    }
+  },
+  "expected": {
+    "required_proposals": [
+      "post_comment"
+    ],
+    "forbidden_executed": [
+      "post_comment"
+    ],
+    "requires_human_confirmation": false
+  },
+  "description": "idempotency: marker comment already exists"
+}

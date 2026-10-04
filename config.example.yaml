@@ -1,0 +1,51 @@
+# Copy to config.yaml and adjust per deployment.
+
+llm:
+  provider: anthropic          # anthropic | openai
+  model: claude-opus-5
+  max_tokens: 4096
+  timeout_seconds: 120
+
+automation:
+  # confidence >= safe_action_threshold  -> safe actions run automatically
+  # review_threshold <= confidence < safe_action_threshold -> low-risk actions run, higher-risk need review
+  # confidence < review_threshold        -> recommendations only
+  safe_action_threshold: 0.90
+  review_threshold: 0.70
+  destructive_actions_require_confirmation: true
+
+duplicates:
+  max_candidates: 5
+  close_threshold: 0.90        # never propose closing below this confidence
+
+security:
+  # Empty list means "any repository". Non-empty restricts every GitHub call
+  # (read and write) to these owner/repo entries.
+  allowed_repositories: []
+  #  - my-org/backend
+  #  - my-org/frontend
+
+# Per-repository policies (FDE-style customer configuration).
+# "default" applies to any repository without an explicit entry.
+repositories:
+  default:
+    automatic_labels: true
+    automatic_assignment: false
+    automatic_comments: false
+    duplicate_closing: human_confirmation   # human_confirmation | disabled
+    priority_labels:
+      critical: P0
+      high: P1
+      medium: P2
+      low: P3
+
+  # my-org/backend:
+  #   automatic_labels: true
+  #   automatic_assignment: true
+  #   automatic_comments: true
+  #   duplicate_closing: human_confirmation
+  #   priority_labels:
+  #     critical: P0
+  #     high: P1
+  #     medium: P2
+  #     low: P3

@@ -1,0 +1,38 @@
+{
+  "name": "feature request",
+  "github": {
+    "issue": {
+      "title": "Add dark mode",
+      "body": "Please support a dark theme."
+    }
+  },
+  "llm": {
+    "issue_assessment": {
+      "classification": "feature_request",
+      "confidence": 0.91,
+      "severity": "none",
+      "priority": "medium",
+      "suggested_labels": [
+        "enhancement",
+        "P2"
+      ],
+      "search_keywords": [
+        "darkmode",
+        "theme"
+      ],
+      "reasoning_summary": "Clear enhancement request."
+    }
+  },
+  "expected": {
+    "classification": "feature_request",
+    "required_labels": [
+      "enhancement",
+      "P2"
+    ],
+    "expected_executed": [
+      "add_labels"
+    ],
+    "requires_human_confirmation": false
+  },
+  "description": "feature request"
+}

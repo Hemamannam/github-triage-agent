@@ -1,0 +1,43 @@
+{
+  "name": "suggested labels normalised to repository casing",
+  "github": {
+    "issue": {
+      "title": "OAuth callback crashes when token expires",
+      "body": "KeyError in refresh_token. Version 2.1.0, Python 3.12. Full traceback attached."
+    }
+  },
+  "llm": {
+    "issue_assessment": {
+      "classification": "bug",
+      "confidence": 0.93,
+      "severity": "high",
+      "priority": "high",
+      "suggested_labels": [
+        "BUG",
+        "p1",
+        "no-such-label"
+      ],
+      "missing_information": [],
+      "search_keywords": [
+        "oauth",
+        "token",
+        "crash"
+      ],
+      "reasoning_summary": "Reproducible crash with traceback."
+    }
+  },
+  "expected": {
+    "required_labels": [
+      "bug",
+      "P1"
+    ],
+    "acceptable_labels": [
+      "bug",
+      "P1"
+    ],
+    "expected_executed": [
+      "add_labels"
+    ]
+  },
+  "description": "suggested labels normalised to repository casing"
+}

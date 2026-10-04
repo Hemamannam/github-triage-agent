@@ -1,0 +1,52 @@
+{
+  "name": "missing-info comment runs when policy allows",
+  "description": "Same incomplete bug, but the repository allows automatic comments.",
+  "github": {
+    "issue": {
+      "title": "App crashes sometimes",
+      "body": "it just crashes"
+    }
+  },
+  "llm": {
+    "issue_assessment": {
+      "classification": "bug",
+      "confidence": 0.93,
+      "severity": "high",
+      "priority": "high",
+      "suggested_labels": [
+        "bug",
+        "P1"
+      ],
+      "missing_information": [
+        "package version",
+        "complete traceback"
+      ],
+      "search_keywords": [
+        "crash"
+      ],
+      "reasoning_summary": "Reproducible crash with traceback."
+    },
+    "comment_draft": {
+      "body": "Thanks for reporting! Could you add the package version and the complete traceback?"
+    }
+  },
+  "config": {
+    "repositories": {
+      "default": {
+        "automatic_labels": true,
+        "automatic_comments": true
+      }
+    }
+  },
+  "expected": {
+    "classification": "bug",
+    "expected_executed": [
+      "add_labels",
+      "post_comment"
+    ],
+    "forbidden_executed": [
+      "close_issue"
+    ],
+    "requires_human_confirmation": false
+  }
+}

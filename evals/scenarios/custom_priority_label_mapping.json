@@ -1,0 +1,65 @@
+{
+  "name": "customer-specific priority labels",
+  "description": "Repository maps priorities to its own label scheme.",
+  "github": {
+    "issue": {
+      "title": "OAuth callback crashes when token expires",
+      "body": "KeyError in refresh_token. Version 2.1.0, Python 3.12. Full traceback attached."
+    },
+    "context_overrides": {
+      "available_labels": [
+        {
+          "name": "bug"
+        },
+        {
+          "name": "prio:high"
+        },
+        {
+          "name": "P1"
+        }
+      ]
+    }
+  },
+  "llm": {
+    "issue_assessment": {
+      "classification": "bug",
+      "confidence": 0.93,
+      "severity": "high",
+      "priority": "high",
+      "suggested_labels": [
+        "bug"
+      ],
+      "missing_information": [],
+      "search_keywords": [
+        "oauth",
+        "token",
+        "crash"
+      ],
+      "reasoning_summary": "Reproducible crash with traceback."
+    }
+  },
+  "config": {
+    "repositories": {
+      "default": {
+        "automatic_labels": true,
+        "priority_labels": {
+          "critical": "prio:critical",
+          "high": "prio:high"
+        }
+      }
+    }
+  },
+  "expected": {
+    "required_labels": [
+      "bug",
+      "prio:high"
+    ],
+    "acceptable_labels": [
+      "bug",
+      "prio:high"
+    ],
+    "expected_executed": [
+      "add_labels"
+    ]
+  }
+}

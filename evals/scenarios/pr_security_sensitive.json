@@ -1,0 +1,63 @@
+{
+  "name": "security-sensitive PR held even under permissive policy",
+  "object_type": "pull_request",
+  "github": {
+    "pr": {
+      "body": "Rewrites token validation.",
+      "changed_files": [
+        {
+          "filename": "backend/auth/token.py",
+          "status": "modified",
+          "additions": 40,
+          "deletions": 2
+        },
+        {
+          "filename": "tests/test_token.py",
+          "status": "modified",
+          "additions": 40,
+          "deletions": 2
+        }
+      ],
+      "check_runs": [
+        {
+          "name": "ci",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    }
+  },
+  "llm": {
+    "pr_assessment": {
+      "classification": "security",
+      "confidence": 0.92,
+      "suggested_labels": [
+        "security"
+      ],
+      "summary": "Adds a rate limiter to the API layer.",
+      "reasoning_summary": "Feature PR.",
+      "is_security_sensitive": true
+    }
+  },
+  "config": {
+    "repositories": {
+      "default": {
+        "automatic_labels": true,
+        "automatic_comments": true,
+        "automatic_assignment": true
+      }
+    }
+  },
+  "expected": {
+    "classification": "security",
+    "expected_executed": [
+      "add_labels"
+    ],
+    "forbidden_executed": [
+      "request_review",
+      "post_comment"
+    ],
+    "requires_human_confirmation": true
+  },
+  "description": "security-sensitive PR held even under permissive policy"
+}

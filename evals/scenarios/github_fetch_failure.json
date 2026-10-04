@@ -1,0 +1,19 @@
+{
+  "name": "issue fetch failure fails the run cleanly",
+  "github": {
+    "issue": {
+      "title": "OAuth callback crashes when token expires",
+      "body": "KeyError in refresh_token. Version 2.1.0, Python 3.12. Full traceback attached."
+    },
+    "fail_issue_fetch": true
+  },
+  "llm": {},
+  "expected": {
+    "final_status": "failed",
+    "forbidden_executed": [
+      "add_labels",
+      "close_issue"
+    ]
+  },
+  "description": "issue fetch failure fails the run cleanly"
+}

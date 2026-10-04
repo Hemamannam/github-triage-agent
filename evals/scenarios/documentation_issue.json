@@ -1,0 +1,38 @@
+{
+  "name": "documentation request",
+  "github": {
+    "issue": {
+      "title": "Install guide typo",
+      "body": "The README pip command is wrong."
+    }
+  },
+  "llm": {
+    "issue_assessment": {
+      "classification": "documentation",
+      "confidence": 0.94,
+      "severity": "low",
+      "priority": "low",
+      "suggested_labels": [
+        "documentation",
+        "P3"
+      ],
+      "search_keywords": [
+        "typo",
+        "readme"
+      ],
+      "reasoning_summary": "Docs fix."
+    }
+  },
+  "expected": {
+    "classification": "documentation",
+    "required_labels": [
+      "documentation",
+      "P3"
+    ],
+    "expected_executed": [
+      "add_labels"
+    ],
+    "requires_human_confirmation": false
+  },
+  "description": "documentation request"
+}

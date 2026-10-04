@@ -1,0 +1,46 @@
+{
+  "name": "idempotency: labels already present",
+  "github": {
+    "issue": {
+      "title": "OAuth callback crashes when token expires",
+      "body": "KeyError in refresh_token. Version 2.1.0, Python 3.12. Full traceback attached.",
+      "labels": [
+        {
+          "name": "bug"
+        },
+        {
+          "name": "P1"
+        }
+      ]
+    }
+  },
+  "llm": {
+    "issue_assessment": {
+      "classification": "bug",
+      "confidence": 0.93,
+      "severity": "high",
+      "priority": "high",
+      "suggested_labels": [
+        "bug",
+        "P1"
+      ],
+      "missing_information": [],
+      "search_keywords": [
+        "oauth",
+        "token",
+        "crash"
+      ],
+      "reasoning_summary": "Reproducible crash with traceback."
+    }
+  },
+  "expected": {
+    "forbidden_proposals": [
+      "add_labels"
+    ],
+    "forbidden_executed": [
+      "add_labels"
+    ],
+    "requires_human_confirmation": false
+  },
+  "description": "idempotency: labels already present"
+}
